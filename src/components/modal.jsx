@@ -40,15 +40,6 @@ export default function Modal({ children }) {
                       </svg>
                     </button>
                   </div>
-
-                  <div
-                    className='absolute right-0 z-10 w-56 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'
-                    role='menu'
-                    aria-orientation='vertical'
-                    aria-labelledby='menu-button'
-                  >
-                    <div className='py-1' role='none'></div>
-                  </div>
                 </div>
               </div>
             ))}
