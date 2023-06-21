@@ -8,10 +8,24 @@ const store = (set) => ({
   },
   addToCart(newProduct) {
     set((s) => {
-      const matchedProduct = s.cart.find(
+      const matchedProduct = s.cart.findIndex(
         (oldProduct) => oldProduct.id === newProduct.id
       );
       console.log('🛑 ~ set ~ matchedProduct:', matchedProduct);
+
+      if (matchedProduct !== -1)
+        return {
+          ...s,
+          cart: [
+            ...s.cart,
+            {
+              ...s.cart.at(matchedProduct),
+              amount: s.cart.at(matchedProduct).amount
+                ? ++s.cart.at(matchedProduct).amount
+                : 1,
+            },
+          ],
+        };
       return { ...s, cart: [...s.cart, newProduct] };
     });
   },
