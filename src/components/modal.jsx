@@ -14,10 +14,16 @@ export default function Modal({ children }) {
             }
           >
             {cart.map((el) => (
-              <div key={el.id}>
-                <img src={el.image} />
-                <p>{el.name}</p>
-                <p>${el.min}</p>
+              <div className='flex' key={el.id}>
+                <img
+                  src={el.image}
+                  className='object-contain w-10 h-10 rounded-sm ring ring-theme-base'
+                />
+                <div>
+                  <p className='font-semibold text-theme-dark'>{el.name}</p>
+                  <p className='text-theme-gray'>${el.min}</p>
+                </div>
+                <select name='' id={el.name}></select>
               </div>
             ))}
           </div>
