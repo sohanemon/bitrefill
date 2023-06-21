@@ -1,7 +1,7 @@
 import useState from '../state';
 
 export default function Modal({ children }) {
-  const { isModalOpen, setModalOpen, cart } = useState();
+  const { isModalOpen, setModalOpen, cart, removeFromCart } = useState();
 
   return (
     <div className='relative '>
@@ -42,7 +42,10 @@ export default function Modal({ children }) {
                       </button>
                     </div>
                   </div>
-                  <img src='/assets/trash.svg' />
+                  <img
+                    onClick={() => removeFromCart(el.id)}
+                    src='/assets/trash.svg'
+                  />
                 </div>
                 <p className='font-medium text-right text-black'>${el.min}</p>
               </div>

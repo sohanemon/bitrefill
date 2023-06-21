@@ -8,7 +8,7 @@ const store = (set) => ({
     set((s) => ({ ...s, isModalOpen: opt }));
   },
   removeFromCart(id) {
-    set((s) => ({ ...s, cart: [s.cart.filter((el) => el.id !== id)] }));
+    set((s) => ({ ...s, cart: [...s.cart.filter((el) => el.id !== id)] }));
   },
 
   addToCart(newProduct) {
