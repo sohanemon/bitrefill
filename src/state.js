@@ -12,6 +12,7 @@ const store = (set) => ({
         (oldProduct) => oldProduct.id === newProduct.id
       );
       console.log('🛑 ~ set ~ matchedProduct:', matchedProduct);
+      return { ...s, cart: [...s.cart, newProduct] };
     });
   },
 });

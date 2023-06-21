@@ -1,7 +1,7 @@
 import useState from '../state';
 
 export default function Product({ image, name, id, range: { min, max } }) {
-  const { addToCart } = useState();
+  const addToCart = useState((s) => s.addToCart);
   function handleAddToCard() {
     addToCart({ image, id, min, name });
   }
