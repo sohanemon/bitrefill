@@ -50,6 +50,10 @@ export default function Modal({ children }) {
                 <p className='font-medium text-right text-black'>${el.min}</p>
               </div>
             ))}
+            <div className='flex items-center justify-between'>
+              <p className='text-theme-dark'>Total</p>
+              <p className='font-medium text-right text-black'>${500}</p>
+            </div>
           </div>
           <div
             className='fixed inset-0 bg-black/40'
