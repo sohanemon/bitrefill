@@ -27,7 +27,7 @@ export default function Modal({ children }) {
                     <p className='text-theme-gray'>${el.min}</p>
                   </div>
                   <div className='relative inline-block text-left'>
-                    {Selector(el, setAmount)}
+                    <Selector el={el} setAmount={setAmount} />
                   </div>
                   <img
                     onClick={() => removeFromCart(el.id)}
@@ -52,6 +52,8 @@ export default function Modal({ children }) {
   );
 }
 function Selector(el, setAmount) {
+  console.log('🛑 ~ Selector ~ el:', el);
+
   const [amountSelector, setAmountSelector] = useState(false);
   return (
     <div>
