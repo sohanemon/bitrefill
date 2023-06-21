@@ -77,13 +77,13 @@ function Selector(el, setAmount) {
           {Array.from(Array(4)).map((_, idx) => (
             <p
               onClick={() => {
-                setAmount(el.id, el.amount + idx + 1);
+                setAmount(el.id, parseInt(el.amount) + idx + 1);
                 setAmountSelector(false);
               }}
               className='py-1 pr-3 font-medium hover:bg-theme-pink/10'
               key={_}
             >
-              {el.amount + idx + 1}
+              {parseInt(el.amount) + idx + 1}
             </p>
           ))}
         </div>
