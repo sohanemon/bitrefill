@@ -4,7 +4,6 @@ import useStore from '../state';
 export default function Modal({ children }) {
   const { isModalOpen, setAmount, setModalOpen, cart, removeFromCart } =
     useStore();
-  const [amountSelector, setAmountSelector] = useState(false);
 
   return (
     <div className='relative '>
@@ -28,7 +27,7 @@ export default function Modal({ children }) {
                     <p className='text-theme-gray'>${el.min}</p>
                   </div>
                   <div className='relative inline-block text-left'>
-                    {Selector(setAmountSelector, el, amountSelector, setAmount)}
+                    {Selector(el, setAmount)}
                   </div>
                   <img
                     onClick={() => removeFromCart(el.id)}
@@ -52,7 +51,8 @@ export default function Modal({ children }) {
     </div>
   );
 }
-function Selector(setAmountSelector, el, amountSelector, setAmount) {
+function Selector(el, setAmount) {
+  const [amountSelector, setAmountSelector] = useState(false);
   return (
     <div>
       <button
