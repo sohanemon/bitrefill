@@ -28,7 +28,7 @@ export default function Modal({ children }) {
                     <div>
                       <button
                         type='button'
-                        className='inline-flex w-full justify-center gap-x-1.5 rounded-full bg-transparent px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 '
+                        className='peer inline-flex w-full justify-center gap-x-1.5 rounded-full bg-transparent px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 '
                       >
                         {el.amount}
                         <svg
@@ -40,6 +40,16 @@ export default function Modal({ children }) {
                           <path d='M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z' />
                         </svg>
                       </button>
+                      <div className='absolute right-0 z-20 hidden w-20 text-right bg-white rounded shadow top-full peer-focus:block'>
+                        {Array.from(Array(4)).map((_, idx) => (
+                          <p
+                            className='py-1 pr-3 font-medium hover:bg-theme-pink/10'
+                            key={_}
+                          >
+                            {el.amount + idx + 1}
+                          </p>
+                        ))}
+                      </div>
                     </div>
                   </div>
                   <img
