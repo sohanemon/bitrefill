@@ -11,17 +11,16 @@ const store = (set) => ({
       const matchedProduct = s.cart.findIndex(
         (oldProduct) => oldProduct.id === newProduct.id
       );
-      console.log('🛑 ~ set ~ matchedProduct:', matchedProduct);
 
       if (matchedProduct !== -1)
         return {
           ...s,
           cart: [
-            ...s.cart,
+            ...s.cart.filter((_, idx) => idx !== matchedProduct),
             {
-              ...s.cart.at(matchedProduct),
-              amount: s.cart.at(matchedProduct).amount
-                ? ++s.cart.at(matchedProduct).amount
+              ...s.cart[matchedProduct],
+              amount: s.cart[matchedProduct].amount
+                ? ++s.cart[matchedProduct].amount
                 : 1,
             },
           ],
