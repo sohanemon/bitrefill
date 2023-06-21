@@ -7,7 +7,12 @@ const store = (set) => ({
     set((s) => ({ ...s, isModalOpen: opt }));
   },
   addToCart(newProduct) {
-    set((s) => ({ ...s, cart: [...s.cart, newProduct] }));
+    set((s) => {
+      const matchedProduct = s.cart.find(
+        (oldProduct) => oldProduct.id === newProduct.id
+      );
+      console.log('🛑 ~ set ~ matchedProduct:', matchedProduct);
+    });
   },
 });
 

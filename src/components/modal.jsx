@@ -1,7 +1,9 @@
 import useState from '../state';
 
 export default function Modal({ children }) {
-  const { isModalOpen, setModalOpen } = useState();
+  const { isModalOpen, setModalOpen, cart } = useState();
+  console.log('🛑 ~ Modal ~ cart:', cart);
+
   return (
     <div className='relative '>
       <button onClick={() => setModalOpen(true)}>{children}</button>
