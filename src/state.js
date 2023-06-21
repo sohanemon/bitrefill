@@ -31,6 +31,15 @@ const store = (set) => ({
       return { ...s, cart: [...s.cart, { ...newProduct, amount: 1 }] };
     });
   },
+  setAmount(id, amount) {
+    set((s) => ({
+      ...s,
+      cart: [
+        ...s.cart.filter((el) => el.id !== id),
+        { ...s.cart.find((el) => el.id === id), amount },
+      ],
+    }));
+  },
 });
 
 const useState = create(store);
