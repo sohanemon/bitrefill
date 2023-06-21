@@ -32,12 +32,16 @@ export default function Modal({ children }) {
                     src='/assets/trash.svg'
                   />
                 </div>
-                <p className='font-medium text-right text-black'>${el.min}</p>
+                <p className='font-medium text-right text-black'>
+                  ${el.min * el.amount}
+                </p>
               </div>
             ))}
             <div className='flex items-center justify-between'>
               <p className='text-theme-dark'>Total</p>
-              <p className='font-medium text-right text-black'>${500}</p>
+              <p className='font-medium text-right text-black'>
+                ${cart.reduce((p, c) => p + c.amount * c.min, 0)}
+              </p>
             </div>
           </div>
           <div
