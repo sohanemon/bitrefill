@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         theme: {
+          base: '#F8FAF9',
           dark: '#002B28',
           gray: '#6A716E',
           pink: '#EA0B2C',

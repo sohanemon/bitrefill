@@ -4,6 +4,6 @@
 
 @layer base {
   body {
-    @apply text-theme-dark;
+    @apply text-theme-dark bg-theme-base;
   }
 }
