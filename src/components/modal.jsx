@@ -27,10 +27,7 @@ export default function Modal({ children }) {
                   <div>
                     <button
                       type='button'
-                      className='inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50'
-                      id='menu-button'
-                      aria-expanded='true'
-                      aria-haspopup='true'
+                      className='inline-flex w-full justify-center gap-x-1.5 rounded-full bg-white px-2 py-1 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50'
                     >
                       Options
                       <svg
