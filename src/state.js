@@ -3,9 +3,14 @@ import { create } from 'zustand';
 const store = (set) => ({
   cart: [],
   isModalOpen: false,
+
   setModalOpen(opt) {
     set((s) => ({ ...s, isModalOpen: opt }));
   },
+  removeFromCart(id) {
+    set((s) => ({ ...s, cart: [s.cart.filter((el) => el.id !== id)] }));
+  },
+
   addToCart(newProduct) {
     set((s) => {
       const matchedProduct = s.cart.findIndex(
