@@ -27,11 +27,11 @@ export default function Modal({ children }) {
                   <div>
                     <button
                       type='button'
-                      className='inline-flex w-full justify-center gap-x-1.5 rounded-full bg-white p-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50'
+                      className='inline-flex w-full justify-center gap-x-1.5 rounded-full bg-transparent px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 '
                     >
                       {el.amount}
                       <svg
-                        className='w-5 h-5 -mr-1 text-gray-400'
+                        className='w-5 h-5 -mr-1 text-gray-600'
                         viewBox='0 0 20 20'
                         fill='currentColor'
                         aria-hidden='true'
