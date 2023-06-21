@@ -14,12 +14,12 @@ export default function Modal({ children }) {
             }
           >
             {cart.map((el) => (
-              <div className='flex' key={el.id}>
+              <div className='flex items-center gap-4' key={el.id}>
                 <img
                   src={el.image}
                   className='object-contain w-10 h-10 rounded-sm ring ring-theme-base'
                 />
-                <div>
+                <div className='grow'>
                   <p className='font-semibold text-theme-dark'>{el.name}</p>
                   <p className='text-theme-gray'>${el.min}</p>
                 </div>
@@ -41,6 +41,7 @@ export default function Modal({ children }) {
                     </button>
                   </div>
                 </div>
+                <img src='/assets/trash.svg' />
               </div>
             ))}
           </div>
