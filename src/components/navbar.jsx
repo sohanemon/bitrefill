@@ -1,8 +1,8 @@
-import useState from '../state';
+import useStore from '../state';
 import Modal from './modal';
 
 export default function Navbar() {
-  const { cart } = useState();
+  const { cart } = useStore();
   return (
     <nav className='flex items-center justify-between p-6 bg-white shadow md:px-60 md:py-8'>
       <img src='/assets/logo.svg' alt='' />

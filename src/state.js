@@ -44,5 +44,5 @@ const store = (set) => ({
   },
 });
 
-const useState = create(store);
-export default useState;
+const useStore = create(store);
+export default useStore;

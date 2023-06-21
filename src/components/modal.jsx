@@ -1,8 +1,10 @@
-import useState from '../state';
+import { useState } from 'react';
+import useStore from '../state';
 
 export default function Modal({ children }) {
   const { isModalOpen, setAmount, setModalOpen, cart, removeFromCart } =
-    useState();
+    useStore();
+  const [amountSelector, setAmountSelector] = useState(false);
 
   return (
     <div className='relative '>
@@ -26,35 +28,7 @@ export default function Modal({ children }) {
                     <p className='text-theme-gray'>${el.min}</p>
                   </div>
                   <div className='relative inline-block text-left'>
-                    <div>
-                      <button
-                        type='button'
-                        className='peer inline-flex w-full justify-center gap-x-1.5 rounded-full bg-transparent px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 '
-                      >
-                        {el.amount}
-                        <svg
-                          className='w-5 h-5 -mr-1 text-gray-600'
-                          viewBox='0 0 20 20'
-                          fill='currentColor'
-                          aria-hidden='true'
-                        >
-                          <path d='M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z' />
-                        </svg>
-                      </button>
-                      <div className='absolute right-0 z-20 w-20 text-right bg-white rounded shadow top-full peer-focus:block'>
-                        {Array.from(Array(4)).map((_, idx) => (
-                          <p
-                            onClick={() =>
-                              setAmount(el.id, el.amount + idx + 1)
-                            }
-                            className='py-1 pr-3 font-medium hover:bg-theme-pink/10'
-                            key={_}
-                          >
-                            {el.amount + idx + 1}
-                          </p>
-                        ))}
-                      </div>
-                    </div>
+                    {Selector(setAmountSelector, el, amountSelector, setAmount)}
                   </div>
                   <img
                     onClick={() => removeFromCart(el.id)}
@@ -74,6 +48,43 @@ export default function Modal({ children }) {
             onClick={() => setModalOpen(false)}
           />
         </>
+      )}
+    </div>
+  );
+}
+function Selector(setAmountSelector, el, amountSelector, setAmount) {
+  return (
+    <div>
+      <button
+        onClick={() => setAmountSelector(true)}
+        type='button'
+        className=' inline-flex w-full justify-center gap-x-1.5 rounded-full bg-transparent px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 '
+      >
+        {el.amount}
+        <svg
+          className='w-5 h-5 -mr-1 text-gray-600'
+          viewBox='0 0 20 20'
+          fill='currentColor'
+          aria-hidden='true'
+        >
+          <path d='M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z' />
+        </svg>
+      </button>
+      {amountSelector && (
+        <div className='absolute right-0 z-20 w-20 text-right bg-white rounded shadow top-full '>
+          {Array.from(Array(4)).map((_, idx) => (
+            <p
+              onClick={() => {
+                setAmount(el.id, el.amount + idx + 1);
+                setAmountSelector(false);
+              }}
+              className='py-1 pr-3 font-medium hover:bg-theme-pink/10'
+              key={_}
+            >
+              {el.amount + idx + 1}
+            </p>
+          ))}
+        </div>
       )}
     </div>
   );
