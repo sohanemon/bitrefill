@@ -4,7 +4,7 @@ import Modal from './modal';
 export default function Navbar() {
   const { cart } = useStore();
   return (
-    <nav className='flex items-center justify-between p-6 bg-white shadow md:px-60 md:py-8'>
+    <nav className='relative flex items-center justify-between p-6 bg-white shadow md:px-60 md:py-8'>
       <img src='/assets/logo.svg' alt='' />
       <Modal>
         <div className='relative z-20 flex items-center gap-4 cursor-pointer'>
