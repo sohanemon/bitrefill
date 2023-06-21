@@ -12,7 +12,7 @@ export default function Modal({ children }) {
         <>
           <div
             className={
-              'absolute z-10 top-full right-0 w-full md:w-[327px] rounded-xl p-6 divide-y bg-white'
+              'absolute z-10 top-full right-0 w-full md:w-[327px] max-md:w-[88vw] rounded-xl p-6 divide-y bg-white'
             }
           >
             {cart.map((el) => (
