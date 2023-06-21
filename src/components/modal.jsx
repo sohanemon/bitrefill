@@ -14,7 +14,7 @@ export default function Modal({ children }) {
             }
           >
             {cart.map((el) => (
-              <div className='py-3' key={el.id}>
+              <div className='py-4' key={el.id}>
                 <div className='flex items-center gap-4 '>
                   <img
                     src={el.image}
@@ -44,7 +44,7 @@ export default function Modal({ children }) {
                   </div>
                   <img src='/assets/trash.svg' />
                 </div>
-                <p className='text-right text-theme-gray'>${el.min}</p>
+                <p className='font-medium text-right text-black'>${el.min}</p>
               </div>
             ))}
           </div>
