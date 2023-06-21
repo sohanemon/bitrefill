@@ -27,9 +27,9 @@ export default function Modal({ children }) {
                   <div>
                     <button
                       type='button'
-                      className='inline-flex w-full justify-center gap-x-1.5 rounded-full bg-white px-2 py-1 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50'
+                      className='inline-flex w-full justify-center gap-x-1.5 rounded-full bg-white p-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50'
                     >
-                      Options
+                      {el.amount}
                       <svg
                         className='w-5 h-5 -mr-1 text-gray-400'
                         viewBox='0 0 20 20'

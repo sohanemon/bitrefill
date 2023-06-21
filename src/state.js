@@ -19,13 +19,11 @@ const store = (set) => ({
             ...s.cart.filter((_, idx) => idx !== matchedProduct),
             {
               ...s.cart[matchedProduct],
-              amount: s.cart[matchedProduct].amount
-                ? ++s.cart[matchedProduct].amount
-                : 1,
+              amount: ++s.cart[matchedProduct].amount,
             },
           ],
         };
-      return { ...s, cart: [...s.cart, newProduct] };
+      return { ...s, cart: [...s.cart, { ...newProduct, amount: 1 }] };
     });
   },
 });
