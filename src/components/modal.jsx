@@ -1,7 +1,8 @@
 import useState from '../state';
 
 export default function Modal({ children }) {
-  const { isModalOpen, setModalOpen, cart, removeFromCart } = useState();
+  const { isModalOpen, setAmount, setModalOpen, cart, removeFromCart } =
+    useState();
 
   return (
     <div className='relative '>
@@ -40,9 +41,12 @@ export default function Modal({ children }) {
                           <path d='M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z' />
                         </svg>
                       </button>
-                      <div className='absolute right-0 z-20 hidden w-20 text-right bg-white rounded shadow top-full peer-focus:block'>
+                      <div className='absolute right-0 z-20 w-20 text-right bg-white rounded shadow top-full peer-focus:block'>
                         {Array.from(Array(4)).map((_, idx) => (
                           <p
+                            onClick={() =>
+                              setAmount(el.id, el.amount + idx + 1)
+                            }
                             className='py-1 pr-3 font-medium hover:bg-theme-pink/10'
                             key={_}
                           >

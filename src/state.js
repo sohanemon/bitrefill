@@ -32,6 +32,8 @@ const store = (set) => ({
     });
   },
   setAmount(id, amount) {
+    console.log('🛑 ~ setAmount ~ amount:', id, amount);
+
     set((s) => ({
       ...s,
       cart: [

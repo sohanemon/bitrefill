@@ -8,7 +8,6 @@ export default function Products() {
       .then((res) => res.json())
       .then((data) => setProducts(data.products));
   }, []);
-  console.log(products);
   return (
     <section className='grid grid-cols-2 gap-3 p-6 md:px-60 md:py-10 md:gap-5 md:grid-cols-3 lg:grid-cols-4'>
       {products.map((el) => (
