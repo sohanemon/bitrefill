@@ -32,15 +32,11 @@ const store = (set) => ({
     });
   },
   setAmount(id, amount) {
-    console.log('🛑 ~ setAmount ~ amount:', id, amount);
-
-    set((s) => ({
-      ...s,
-      cart: [
-        ...s.cart.filter((el) => el.id !== id),
-        { ...s.cart.find((el) => el.id === id), amount },
-      ],
-    }));
+    set((s) => {
+      const oldProduct = s.cart.findIndex((el) => el.id === id);
+      s.cart[oldProduct].amount = amount;
+      return s.cart;
+    });
   },
 });
 
