@@ -44,7 +44,7 @@ export default function Modal({ children }) {
                 ${cart.reduce((p, c) => p + c.amount * c.min, 0)}
               </p>
             </div>
-            <button className='w-full font-semibold text-white rounded-full bg-theme-pink'>
+            <button className='w-full h-10 mt-3 font-semibold text-white rounded-full bg-theme-pink'>
               Continue to checkout
             </button>
           </div>
