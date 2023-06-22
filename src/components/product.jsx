@@ -9,11 +9,11 @@ export default function Product({ image, name, id, range: { min, max } }) {
   return (
     <div
       title='Add to cart'
-      className='flex flex-col overflow-hidden transition-all group active:scale-95'
+      className='flex flex-col overflow-hidden transition-all group '
       onClick={handleAddToCard}
     >
       <img
-        className='object-contain bg-white rounded group-hover:opacity-80 grow '
+        className='object-contain bg-white rounded group-active:scale-95 group-hover:opacity-80 grow '
         src={image}
       />
       <h3 className='mt-3 text-lg font-semibold'>{name}</h3>
