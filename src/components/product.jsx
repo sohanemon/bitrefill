@@ -16,7 +16,7 @@ export default function Product({ image, name, id, range: { min, max } }) {
         className='object-contain bg-white rounded group-hover:opacity-80 grow '
         src={image}
       />
-      <h3 className='text-lg font-semibold '>{name}</h3>
+      <h3 className='mt-3 text-lg font-semibold'>{name}</h3>
       <div className='flex items-center gap-2 text-theme-gray'>
         <p>${min}</p> {'-'}
         <p>${max}</p>
