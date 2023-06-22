@@ -7,7 +7,7 @@ export default function Modal({ children }) {
 
   return (
     <div className='relative '>
-      <button onClick={() => !!cart.length && setModalOpen(true)}>
+      <button onClick={() => cart.length && setModalOpen(true)}>
         {children}
       </button>
       {isModalOpen && !!cart.length && (
