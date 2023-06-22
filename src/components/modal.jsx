@@ -83,17 +83,17 @@ export default function Modal({ children }) {
             </svg>
           </button>
           {isOpen && (
-            <div className='absolute right-0 z-20 w-20 text-right bg-white rounded shadow top-full peer-focus:block'>
-              {Array.from(Array(4)).map((_, idx) => (
+            <div className='absolute right-0 z-20 w-20 h-32 overflow-y-scroll text-right bg-white rounded shadow top-full peer-focus:block'>
+              {Array.from(Array(20)).map((_, idx) => (
                 <p
                   onClick={() => {
-                    setAmount(el.id, el.amount + idx + 1);
+                    setAmount(el.id, idx + 1);
                     setIsOpen(false);
                   }}
                   className='py-1 pr-3 font-medium hover:bg-theme-pink/10'
                   key={_}
                 >
-                  {el.amount + idx + 1}
+                  {idx + 1}
                 </p>
               ))}
             </div>
