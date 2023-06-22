@@ -56,17 +56,6 @@
       "currency": "USD"
     },
     {
-      "id": "doordash-usa",
-      "image": "https://www.bitrefill.com/content/cn/v1661860260/doordash-white.jpg",
-      "name": "DoorDash",
-      "categories": ["food", "restaurants"],
-      "range": {
-        "min": 15,
-        "max": 200
-      },
-      "currency": "USD"
-    },
-    {
       "id": "airbnb-usa",
       "image": "https://www.bitrefill.com/content/cn/v1661860260/airbnb_2022_latest.jpg",
       "name": "Airbnb",
