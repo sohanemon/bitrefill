@@ -9,7 +9,7 @@ export default function Product({ image, name, id, range: { min, max } }) {
   return (
     <div
       title='Add to cart'
-      className='flex flex-col overflow-hidden group'
+      className='flex flex-col overflow-hidden transition-all group active:scale-95'
       onClick={handleAddToCard}
     >
       <img
