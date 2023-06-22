@@ -28,6 +28,7 @@ export default function Modal({ children }) {
                   </div>
                   <Selector el={el} />
                   <img
+                    className='cursor-pointer'
                     onClick={() => removeFromCart(el.id)}
                     src='/assets/trash.svg'
                   />
